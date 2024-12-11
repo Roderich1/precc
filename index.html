@@ -1,271 +1,327 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #f6f8fc 0%, #e9ecef 100%);
-      min-height: 100vh;
-    }
-    .trifold {
-      display: flex;
-      background: white;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      max-width: 1200px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-    }
-    .panel {
-      flex: 1;
-      padding: 30px;
-      position: relative;
-      background: white;
-      transition: transform 0.3s ease;
-    }
-    .panel:hover {
-      transform: translateY(-5px);
-    }
-    .panel::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 10%;
-      height: 80%;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, #e0e0e0, transparent);
-    }
-    .panel:last-child::after {
-      display: none;
-    }
-    .logo-container {
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .logo {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      padding: 10px;
-      background: white;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .logo:hover {
-      transform: scale(1.05);
-    }
-    h1 {
-      background: linear-gradient(45deg, #8B0000, #FF4444);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 32px;
-      text-align: center;
-      margin: 20px 0;
-      font-weight: 800;
-    }
-    h2 {
-      color: #2c3e50;
-      font-size: 22px;
-      margin: 25px 0 15px;
-      position: relative;
-      padding-left: 15px;
-    }
-    h2::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 20px;
-      background: linear-gradient(45deg, #8B0000, #FF4444);
-      border-radius: 2px;
-    }
-    p {
-      color: #546e7a;
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 15px 0;
-    }
-    .highlight {
-      background: linear-gradient(145deg, #ffffff, #f8f9fa);
-      padding: 20px;
-      border-radius: 15px;
-      margin: 15px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid rgba(139, 0, 0, 0.1);
-    }
-    .feature-list {
-      padding: 0;
-      list-style: none;
-    }
-    .feature-list li {
-      margin: 12px 0;
-      padding-left: 25px;
-      position: relative;
-      color: #546e7a;
-      font-size: 15px;
-    }
-    .feature-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #8B0000;
-      font-weight: bold;
-    }
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin: 20px 0;
-    }
-    .tech-item {
-      background: linear-gradient(145deg, #ffffff, #f8f9fa);
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(139, 0, 0, 0.1);
-    }
-    .tech-item:hover {
-      transform: translateY(-3px);
-    }
-    .contact-info {
-      background: linear-gradient(145deg, #8B0000, #FF4444);
-      color: white;
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 30px;
-    }
-    .contact-info h2 {
-      color: white;
-      padding-left: 0;
-    }
-    .contact-info h2::before {
-      display: none;
-    }
-    .contact-info ul {
-      list-style: none;
-      padding: 0;
-    }
-    .contact-info li {
-      color: white;
-      margin: 10px 0;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-    }
-    .contact-info li::before {
-      content: '•';
-      margin-right: 10px;
-      color: rgba(255,255,255,0.8);
-    }
-    .badge {
-      display: inline-block;
-      padding: 8px 15px;
-      background: rgba(139, 0, 0, 0.1);
-      color: #8B0000;
-      border-radius: 20px;
-      font-size: 14px;
-      margin: 5px;
-    }
-    .impact-section {
-      background: linear-gradient(145deg, #f8f9fa, #ffffff);
-      padding: 20px;
-      border-radius: 15px;
-      margin: 20px 0;
-      border: 2px solid rgba(139, 0, 0, 0.1);
-    }
-    .impact-icon {
-      font-size: 24px;
-      color: #8B0000;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto UNIVALLE - Equipo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #800020 0%, #4a0012 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            background: white;
+            border-radius: 50%;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Estilos actualizados para la sección del equipo */
+        .team-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .team-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+
+        .member-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            width: 280px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(255,255,255,0.1),
+                rgba(255,255,255,0.05)
+            );
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .member-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .member-icon {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #800020, #4a0012);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .member-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover .member-icon img {
+            transform: scale(1.05);
+        }
+
+        .member-card h3 {
+            font-size: 1.4rem;
+            color: white;
+            margin-top: 1rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Estilos QR */
+        .qr-section {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .qr-code {
+            text-align: center;
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-code:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+
+        .qr-title {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .team-members {
+                gap: 2rem;
+            }
+            
+            .member-icon {
+                width: 150px;
+                height: 150px;
+            }
+
+            .qr-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #800020, #4a0012);
+            padding: 8px;
+            box-shadow: 
+                0 10px 20px rgba(0,0,0,0.2),
+                inset 0 0 15px rgba(255,255,255,0.2);
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(
+                45deg,
+                rgba(255,255,255,0.5),
+                rgba(255,255,255,0.2)
+            );
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .logo img {
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+            padding: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="trifold">
-    <!-- Panel Izquierdo -->
-    <div class="panel">
-      <div class="logo-container">
-        <img class="logo" src="assets/logo.png" alt="PetApp Logo" />
-      </div>
-      <h1>PetApp</h1>
-      <div class="highlight">
-        <h2>Innovación en Cuidado Animal</h2>
-        <p>Desarrollado por estudiantes de la Universidad del Valle, Santa Cruz - Bolivia, revolucionando el cuidado de mascotas mediante tecnología de vanguardia.</p>
-      </div>
-      
-      <h2>Desafío</h2>
-      <ul class="feature-list">
-        <li>Gestión compleja de salud y vacunación</li>
-        <li>Acceso limitado a servicios veterinarios</li>
-        <li>Falta de centralización de información</li>
-        <li>Necesidad de herramientas modernas</li>
-      </ul>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="assets/logo.png" alt="UNIVALLE Logo">
+            </div>
+            <h1 class="title">PROYECTO DE SISTEMAS I - UNIVALLE</h1>
+            <h2 class="subtitle">Universidad UNIVALLE Santa Cruz</h2>
+            <h3 class="subtitle">Facultad de Tecnología</h3>
+            <h4 class="subtitle">Ingeniería de Sistemas - Grupo "B"</h4>
+            <p class="subtitle">Cuarto Semestre</p>
+        </header>
+
+        <section class="team-section">
+            <h2 class="team-title">Integrantes del Equipo</h2>
+            <div class="team-members">
+                <div class="member-card">
+                    <div class="member-icon">
+                        <img src="assets/perfil2.png" alt="Elias Pol Machicao">
+                    </div>
+                    <h3>Elias Pol Machicao</h3>
+                </div>
+                <div class="member-card">
+                    <div class="member-icon">
+                        <img src="assets/perfil1.png" alt="Rodrigo Rendon Cardenas">
+                    </div>
+                    <h3>Rodrigo Rendon </h3>
+                </div>
+                <div class="member-card">
+                    <div class="member-icon">
+                        <img src="assets/perfil3.png" alt="Julio Guzman">
+                    </div>
+                    <h3>Julio Guzman</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="qr-section">
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://youtube.com/shorts/49kZyzujS7k?si=pOSvweHqDcAZUwe5" alt="QR Informe">
+                <h3 class="qr-title">Escanea para ver el Video</h3>
+            </div>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://drive.google.com/drive/folders/1EEibPU8Q3oJqDduSy2dqDIIv4ivUyp1r?dmr=1&ec=wgc-drive-hero-goto" alt="QR Video">
+                <h3 class="qr-title">Escanea para ver el Informe</h3>
+            </div>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://roderich1.github.io/trip/" alt="QR Video">
+                <h3 class="qr-title">Escanea para ver el Triptico</h3>
+            </div>
+        </section>
     </div>
-
-    <!-- Panel Central -->
-    <div class="panel">
-      <h2>Solución Integral</h2>
-      <div class="highlight">
-        <p>Plataforma móvil todo-en-uno que revoluciona el cuidado de mascotas:</p>
-        <ul class="feature-list">
-          <li>Sistema de gestión médica avanzado</li>
-          <li>Marketplace veterinario integrado</li>
-          <li>Plataforma de adopciones eficiente</li>
-          <li>Centro de recursos y apoyo</li>
-        </ul>
-      </div>
-
-      <h2>Stack Tecnológico</h2>
-      <div class="tech-grid">
-        <div class="tech-item">Flutter</div>
-        <div class="tech-item">ASP.NET</div>
-        <div class="tech-item">SQL Server</div>
-        <div class="tech-item">REST API</div>
-      </div>
-
-      <div class="impact-section">
-        <div class="impact-icon">🌟</div>
-        <h2>Impacto Social</h2>
-        <p>Contribuimos activamente al ODS 12, promoviendo el cuidado responsable de mascotas y prácticas sostenibles en la comunidad veterinaria.</p>
-      </div>
-    </div>
-
-    <!-- Panel Derecho -->
-    <div class="panel">
-      <h2>Características Premium</h2>
-      <div class="tech-grid">
-        <span class="badge">Historial Médico Digital</span>
-        <span class="badge">Recordatorios Inteligentes</span>
-        <span class="badge">Marketplace Exclusivo</span>
-        <span class="badge">Red de Adopción</span>
-      </div>
-
-      <h2>Beneficios Clave</h2>
-      <ul class="feature-list">
-        <li>Gestión veterinaria simplificada</li>
-        <li>Acceso inmediato a historiales</li>
-        <li>Conexión directa con especialistas</li>
-        <li>Proceso de adopción transparente</li>
-      </ul>
-
-      <div class="contact-info">
-        <h2>Contacto</h2>
-        <ul>
-          <li>Universidad del Valle</li>
-          <li>Santa Cruz - Bolivia</li>
-          <li>Ingeniería de Sistemas - 4° Semestre</li>
-          <li>Proyecto Integrador EXPO TEC</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
